@@ -38,7 +38,7 @@ import { FenceComponent } from './fence/fence.component';
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
       { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
-      { path: 'fence', component: FenceComponent }
+      { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] }
     ])
   ],
   providers: [
