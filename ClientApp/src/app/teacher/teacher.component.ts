@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TeacherComponent implements OnInit {
     public teachers: Teacher[];
-    public newTeacher: Teacher = {firstName:'', lastName: ''};
+    public newTeacher: Teacher = { firstName: '', lastName: '' };
 
     constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
 

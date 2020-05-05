@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,29 +13,29 @@ namespace capstone.Controllers
     [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class TeacherController : ControllerBase
+    public class FenceController : ControllerBase
     {
 
         [HttpGet]
-        public IEnumerable<Teacher> Get()
+        public IEnumerable<Fence> Get()
         {
-            Teacher[] teacher = null;
+            Fence[] fence = null;
             using (var context = new ApplicationDbContext())
             {
-                teacher = context.Teachers.ToArray();
+                fence = context.Fence.ToArray();
             }
-            return teacher;
+            return fence;
 
         }
         [HttpPost]
-        public Teacher Post([FromBody]Teacher teacher)
+        public Fence Post([FromBody]Fence fence)
         {
             using (var context = new ApplicationDbContext())
             {
-                context.Teachers.Add(teacher);
+                context.Fence.Add(fence);
                 context.SaveChanges();
             }
-            return teacher;
+            return fence;
         }
     }
 }
