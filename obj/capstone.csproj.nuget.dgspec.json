@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/capstone.csproj": {}
+    "/Users/colecarter/Documents/CapstoneProject/capstone.csproj": {}
   },
   "projects": {
-    "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/capstone.csproj": {
+    "/Users/colecarter/Documents/CapstoneProject/capstone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/capstone.csproj",
+        "projectUniqueName": "/Users/colecarter/Documents/CapstoneProject/capstone.csproj",
         "projectName": "capstone",
-        "projectPath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/capstone.csproj",
+        "projectPath": "/Users/colecarter/Documents/CapstoneProject/capstone.csproj",
         "packagesPath": "/Users/colecarter/.nuget/packages/",
-        "outputPath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/obj/",
+        "outputPath": "/Users/colecarter/Documents/CapstoneProject/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

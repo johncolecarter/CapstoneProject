@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/capstone.csproj",
+  "FilePath": "/Users/colecarter/Documents/CapstoneProject/capstone.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14516,18 +14516,18 @@
   "RootNamespace": "capstone",
   "Documents": [
     {
-      "FilePath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/Pages/_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
+      "FilePath": "/Users/colecarter/Documents/CapstoneProject/Pages/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/Pages/Error.cshtml",
+      "FilePath": "/Users/colecarter/Documents/CapstoneProject/Pages/Error.cshtml",
       "TargetPath": "Pages\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/colecarter/Documents/CapstoneProject/NG421_Capstone/Pages/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_LoginPartial.cshtml",
+      "FilePath": "/Users/colecarter/Documents/CapstoneProject/Pages/_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],
