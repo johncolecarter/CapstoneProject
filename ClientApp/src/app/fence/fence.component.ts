@@ -14,7 +14,7 @@ export class FenceComponent implements OnInit {
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
   async ngOnInit() {
-    return await this.http.get<Fence[]>(this.baseUrl + 'fence').toPromise();
+    this.fences = await this.http.get<Fence[]>(this.baseUrl + 'fence').toPromise();
   }
 
   async save() {

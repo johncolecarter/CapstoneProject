@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './students.component.html'
 })
 export class StudentsComponent implements OnInit {
-    public students: Student[];
+  public students: Student[];
 
-    constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
-       
-    }
-    async ngOnInit() {
-        this.students = await this.http.get<Student[]>(this.baseUrl + 'student').toPromise();
-    }
+  constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) {
+
+  }
+  async ngOnInit() {
+    this.students = await this.http.get<Student[]>(this.baseUrl + 'student').toPromise();
+  }
 
 
 }
