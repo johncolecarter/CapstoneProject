@@ -1,8 +1,12 @@
 <div class="body">
     <h1>Fence List</h1>
 
-    <div>
-        <button (click)="createNew()">Create a new fence</button>
+    <div *ngIf="this.isCreating === false">
+        <button (click)="createNew()" class="btn">Create a new fence</button>
+    </div>
+
+    <div *ngIf="this.isCreating === true">
+        <button (click)="createNew()" class="btn">Close</button>
     </div>
 
     <div *ngIf="this.isCreating === true">
