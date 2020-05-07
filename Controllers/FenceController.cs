@@ -15,26 +15,28 @@ namespace capstone.Controllers
     [Route("[controller]")]
     public class FenceController : ControllerBase
     {
+        private ApplicationDbContext _context;
+
+        public FenceController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
         [HttpGet]
         public IEnumerable<Fence> Get()
         {
             Fence[] fence = null;
-            using (var context = new ApplicationDbContext())
-            {
-                fence = context.Fence.ToArray();
-            }
+
+            fence = _context.Fence.ToArray();
+
             return fence;
 
         }
         [HttpPost]
         public Fence Post([FromBody]Fence fence)
         {
-            using (var context = new ApplicationDbContext())
-            {
-                context.Fence.Add(fence);
-                context.SaveChanges();
-            }
+            _context.Fence.Add(fence);
+            _context.SaveChanges();
             return fence;
         }
     }

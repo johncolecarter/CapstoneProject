@@ -2,6 +2,16 @@
 
 <p *ngIf="!fences"><em>Loading...</em></p>
 
+HomeOwner
+<input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
+Address
+<input [(ngModel)]="newFence.address" name="address" />
+Feet of Fence
+<input [(ngModel)]="newFence.feetOfFence" name="feetOfFence" />
+Price
+<input [(ngModel)]="newFence.price" name="price" />
+<button (click)="save()">Save</button>
+
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="fences">
     <thead>
         <tr>
@@ -20,12 +30,3 @@
         </tr>
     </tbody>
 </table>
-HomeOwner
-<input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
-Address
-<input [(ngModel)]="newFence.address" name="address" />
-Feet of Fence
-<input [(ngModel)]="newFence.feetOfFence" name="feetOfFence" />
-Price
-<input [(ngModel)]="newFence.price" name="price" />
-<button (click)="save()">Save</button>

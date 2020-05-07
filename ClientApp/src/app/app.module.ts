@@ -15,6 +15,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { TeacherComponent } from './teacher/teacher.component';
 import { FenceComponent } from './fence/fence.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FenceComponent } from './fence/fence.component';
       { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
       { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
       { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
