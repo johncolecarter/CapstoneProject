@@ -31,6 +31,16 @@ Price
     </tbody>
 </table> -->
 
+<h1>Fence List</h1>
+
+<div>
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+    </mat-form-field>
+
+</div>
+
 <div>
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
 
@@ -64,5 +74,5 @@ Price
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <!-- <mat-paginator [pageSizeOptions]="[5, 3, 6, 12]" showFirstLastButtons></mat-paginator> -->
+    <mat-paginator [pageSizeOptions]="[5, 3, 6, 12]" showFirstLastButtons></mat-paginator>
 </div>
