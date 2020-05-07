@@ -12,6 +12,8 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class FenceComponent implements OnInit {
 
+  isCreating = false;
+
   public fences: IFence[];
   public newFence: IFence = { homeOwner: '', address: '', feetOfFence: undefined, price: undefined };
 
@@ -50,6 +52,10 @@ export class FenceComponent implements OnInit {
     this.dataSource.sort = this.sort;
 
     this.dataSource.paginator = this.paginator;
+  }
+
+  createNew() {
+    this.isCreating = !this.isCreating;
   }
 
 }
