@@ -1,4 +1,4 @@
-<h1 id="tableLabel">Fences</h1>
+<!-- <h1 id="tableLabel">Fences</h1>
 
 <p *ngIf="!fences"><em>Loading...</em></p>
 
@@ -29,4 +29,40 @@ Price
             <td> {{ f.price | currency}}</td>
         </tr>
     </tbody>
-</table>
+</table> -->
+
+<div>
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="homeOwner">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
+            <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="feetOfFence">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
+            <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <!-- <mat-paginator [pageSizeOptions]="[5, 3, 6, 12]" showFirstLastButtons></mat-paginator> -->
+</div>

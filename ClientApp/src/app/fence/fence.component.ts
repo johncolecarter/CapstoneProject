@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IFence } from '../interfaces/ifence';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-fence',
@@ -8,26 +10,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FenceComponent implements OnInit {
 
-  public fences: Fence[];
-  public newFence: Fence = { homeOwner: '', address: '', feetOfFence: undefined, price: undefined };
+  public fences: IFence[];
+  public newFence: IFence = { homeOwner: '', address: '', feetOfFence: undefined, price: undefined };
+
+  displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'price'];
+  dataSource: MatTableDataSource<IFence>;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') private baseUrl: string) { }
 
   async ngOnInit() {
-    this.fences = await this.http.get<Fence[]>(this.baseUrl + 'fence').toPromise();
+    this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
+    const fence = this.fences;
+    this.dataSource = new MatTableDataSource(fence);
   }
 
   async save() {
-    await this.http.post<Fence[]>(this.baseUrl + 'fence', this.newFence).toPromise();
+    await this.http.post<IFence[]>(this.baseUrl + 'fence', this.newFence).toPromise();
     this.newFence = { homeOwner: '', address: '', feetOfFence: 0, price: 0 };
-    this.fences = await this.http.get<Fence[]>(this.baseUrl + 'fence').toPromise();
+    this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
   }
 
-}
-
-interface Fence {
-  homeOwner: string;
-  address: string;
-  feetOfFence: number;
-  price: number;
 }
