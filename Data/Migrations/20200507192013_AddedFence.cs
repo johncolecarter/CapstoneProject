@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace capstone.Data.Migrations
 {
@@ -42,15 +43,35 @@ namespace capstone.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    HomeOwner = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    FeetOfFence = table.Column<string>(nullable: true),
-                    Price = table.Column<string>(nullable: true)
+                    Date = table.Column<DateTime>(nullable: false),
+                    Builder = table.Column<string>(nullable: true),
+                    HomeOwner = table.Column<string>(nullable: true),
+                    FeetOfFence = table.Column<double>(nullable: false),
+                    HeightOfFence = table.Column<int>(nullable: false),
+                    TypeOfFence = table.Column<string>(nullable: true),
+                    Gates = table.Column<int>(nullable: false),
+                    Curb = table.Column<bool>(nullable: false),
+                    Stain = table.Column<bool>(nullable: false),
+                    BOrC = table.Column<string>(nullable: true),
+                    Price = table.Column<double>(nullable: false),
+                    UserId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Fence", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Fence_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fence_UserId",
+                table: "Fence",
+                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

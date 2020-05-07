@@ -9,7 +9,7 @@ using capstone.Data;
 namespace capstone.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200505181011_AddedFence")]
+    [Migration("20200507192013_AddedFence")]
     partial class AddedFence
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -305,16 +305,45 @@ namespace capstone.Data.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FeetOfFence")
+                    b.Property<string>("BOrC")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("Builder")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Curb")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("FeetOfFence")
+                        .HasColumnType("REAL");
+
+                    b.Property<int>("Gates")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("HeightOfFence")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("HomeOwner")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Price")
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
+
+                    b.Property<bool>("Stain")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("TypeOfFence")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Fence");
                 });
@@ -402,6 +431,13 @@ namespace capstone.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("capstone.Models.Fence", b =>
+                {
+                    b.HasOne("capstone.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
