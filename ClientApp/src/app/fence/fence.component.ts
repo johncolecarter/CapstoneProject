@@ -43,6 +43,13 @@ export class FenceComponent implements OnInit {
     await this.http.post<IFence[]>(this.baseUrl + 'fence', this.newFence).toPromise();
     this.newFence = { homeOwner: '', address: '', feetOfFence: 0, price: 0 };
     this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
+
+    const fence = this.fences;
+    this.dataSource = new MatTableDataSource(fence);
+
+    this.dataSource.sort = this.sort;
+
+    this.dataSource.paginator = this.paginator;
   }
 
 }

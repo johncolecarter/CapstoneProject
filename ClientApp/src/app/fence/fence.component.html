@@ -1,37 +1,16 @@
-<!-- <h1 id="tableLabel">Fences</h1>
-
-<p *ngIf="!fences"><em>Loading...</em></p>
-
-HomeOwner
-<input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
-Address
-<input [(ngModel)]="newFence.address" name="address" />
-Feet of Fence
-<input [(ngModel)]="newFence.feetOfFence" name="feetOfFence" />
-Price
-<input [(ngModel)]="newFence.price" name="price" />
-<button (click)="save()">Save</button>
-
-<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="fences">
-    <thead>
-        <tr>
-            <th>Home Owner</th>
-            <th>Address</th>
-            <th>Feet of Fence</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let f of fences">
-            <td>{{ f.homeOwner}}</td>
-            <td>{{ f.address }}</td>
-            <td>{{ f.feetOfFence }}</td>
-            <td> {{ f.price | currency}}</td>
-        </tr>
-    </tbody>
-</table> -->
-
 <h1>Fence List</h1>
+
+<div>
+    Home Owner
+    <input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
+    Address
+    <input [(ngModel)]="newFence.address" name="adress" />
+    Feet of Fence
+    <input [(ngModel)]="newFence.feetOfFence" name="feetOfFence" />
+    Price
+    <input [(ngModel)]="newFence.price" name="price" />
+    <button (click)="save()">Save</button>
+</div>
 
 <div>
     <mat-form-field>
@@ -71,8 +50,8 @@ Price
             <td mat-cell *matCellDef="let element"> {{element.price}} </td>
         </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5, 3, 6, 12]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
 </div>
