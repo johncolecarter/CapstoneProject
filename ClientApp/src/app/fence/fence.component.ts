@@ -15,7 +15,8 @@ export class FenceComponent implements OnInit {
   isCreating = false;
 
   public fences: IFence[];
-  public newFence: IFence = { homeOwner: '', address: '', feetOfFence: undefined, price: undefined };
+  // tslint:disable-next-line: max-line-length
+  public newFence: IFence = { homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: undefined, typeOfFence: '', gates: undefined, curb: true, stain: true, bOrC: '', price: undefined };
 
   displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'price'];
   dataSource: MatTableDataSource<IFence>;
@@ -43,7 +44,9 @@ export class FenceComponent implements OnInit {
 
   async save() {
     await this.http.post<IFence[]>(this.baseUrl + 'fence', this.newFence).toPromise();
-    this.newFence = { homeOwner: '', address: '', feetOfFence: 0, price: 0 };
+    // tslint:disable-next-line: max-line-length
+    // this.newFence = { homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: 0, heightOfFence: 0, typeOfFence: '', gates: 0, curb: true, stain: true, bOrC: '', price: 0 };
+
     this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
 
     const fence = this.fences;

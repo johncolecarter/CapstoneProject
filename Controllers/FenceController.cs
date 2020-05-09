@@ -10,7 +10,6 @@ using Microsoft.Extensions.Logging;
 
 namespace capstone.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class FenceController : ControllerBase
@@ -33,7 +32,7 @@ namespace capstone.Controllers
 
         }
         [HttpPost]
-        public Fence Post([FromBody]Fence fence)
+        public Fence Post([FromBody] Fence fence)
         {
             _context.Fence.Add(fence);
             _context.SaveChanges();

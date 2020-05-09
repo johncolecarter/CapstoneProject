@@ -21,7 +21,7 @@ namespace capstone.Models
 
         public string HomeOwner { get; set; }
 
-        public double FeetOfFence { get; set; }
+        public int FeetOfFence { get; set; }
 
         public int HeightOfFence { get; set; }
 
@@ -35,10 +35,6 @@ namespace capstone.Models
 
         public string BOrC { get; set; }
 
-        public double Price { get; set; }
-
-        public string UserId { get; set; }
-
-        public ApplicationUser User { get; set; }
+        public int Price { get; set; }
     }
 }

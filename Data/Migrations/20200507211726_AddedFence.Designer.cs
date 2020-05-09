@@ -9,7 +9,7 @@ using capstone.Data;
 namespace capstone.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200507192013_AddedFence")]
+    [Migration("20200507211726_AddedFence")]
     partial class AddedFence
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -338,12 +338,7 @@ namespace capstone.Data.Migrations
                     b.Property<string>("TypeOfFence")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Fence");
                 });
@@ -431,13 +426,6 @@ namespace capstone.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("capstone.Models.Fence", b =>
-                {
-                    b.HasOne("capstone.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

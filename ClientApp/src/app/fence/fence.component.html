@@ -13,55 +13,74 @@
         Home Owner
         <input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
         Address
-        <input [(ngModel)]="newFence.address" name="adress" />
+        <input [(ngModel)]="newFence.address" name="address" />
+        Date
+        <input [(ngModel)]="newFence.date" name="date" />
+        Builder
+        <input [(ngModel)]="newFence.builder" name="builder" />
         Feet of Fence
-        <input [(ngModel)]="newFence.feetOfFence" name="feetOfFence" />
+        <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" />
+        Heigth Of Fence
+        <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" />
+        Type Of Fence
+        <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" />
+        Gates
+        <input [(ngModel)]="newFence.gates" type="number" name="gates" />
+        Curb
+        <input [(ngModel)]="newFence.curb" name="curb" />
+        Stain
+        <input [(ngModel)]="newFence.stain" name="stain" />
+        Brian or Chad
+        <input [(ngModel)]="newFence.bOrC" name="bOrC" />
         Price
-        <input [(ngModel)]="newFence.price" name="price" />
+        <input [(ngModel)]="newFence.price" type="number" name="price" />
         <button (click)="save()" (click)="createNew()">Save</button>
     </div>
 
-    <div>
-        <mat-form-field>
-            <mat-label>Filter</mat-label>
-            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
-        </mat-form-field>
+    <div *ngIf="this.isCreating === false">
+        <div>
+            <mat-form-field>
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+            </mat-form-field>
 
+        </div>
+
+        <div>
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
+
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="homeOwner">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
+                    <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="address">
+                    <th mat-header-cell *matHeaderCellDef> Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="feetOfFence">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
+                    <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+        </div>
     </div>
 
-    <div>
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
-
-            <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
-                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-            </ng-container>
-
-            <!-- Name Column -->
-            <ng-container matColumnDef="homeOwner">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
-                <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="address">
-                <th mat-header-cell *matHeaderCellDef> Address </th>
-                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-            </ng-container>
-
-            <!-- Weight Column -->
-            <ng-container matColumnDef="feetOfFence">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
-                <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="price">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-                <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
-    </div>
 </div>

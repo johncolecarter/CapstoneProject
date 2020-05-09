@@ -54,24 +54,12 @@ namespace capstone.Data.Migrations
                     Curb = table.Column<bool>(nullable: false),
                     Stain = table.Column<bool>(nullable: false),
                     BOrC = table.Column<string>(nullable: true),
-                    Price = table.Column<double>(nullable: false),
-                    UserId = table.Column<string>(nullable: true)
+                    Price = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Fence", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Fence_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Fence_UserId",
-                table: "Fence",
-                column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
