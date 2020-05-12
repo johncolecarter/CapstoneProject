@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FenceService } from '../services/fence.service';
 
 @Component({
   selector: 'app-fence',
@@ -34,8 +35,8 @@ export class FenceComponent implements OnInit {
   }
 
   constructor(
-    private http: HttpClient, @Inject('BASE_URL') private baseUrl: string,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private fenceService: FenceService
   ) {
     this.fenceForm = this.formBuilder.group({
       inputHomeOwner: ['', Validators.compose([
@@ -82,7 +83,7 @@ export class FenceComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
+    this.fences = await this.fenceService.getFences();
     const fence = this.fences;
     this.dataSource = new MatTableDataSource(fence);
 
@@ -92,11 +93,9 @@ export class FenceComponent implements OnInit {
   }
 
   async save() {
-    await this.http.post<IFence[]>(this.baseUrl + 'fence', this.newFence).toPromise();
-    // tslint:disable-next-line: max-line-length
-    // this.newFence = { homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: 0, heightOfFence: 0, typeOfFence: '', gates: 0, curb: true, stain: true, bOrC: '', price: 0 };
+    await this.fenceService.addFence(this.newFence);
 
-    this.fences = await this.http.get<IFence[]>(this.baseUrl + 'fence').toPromise();
+    this.fences = await this.fenceService.getFences();
 
     const fence = this.fences;
     this.dataSource = new MatTableDataSource(fence);
