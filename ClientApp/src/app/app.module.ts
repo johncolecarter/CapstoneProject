@@ -22,6 +22,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { CreateFenceComponent } from './create-fence/create-fence.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FetchDataComponent,
     StudentsComponent,
     TeacherComponent,
-    FenceComponent
+    FenceComponent,
+    CreateFenceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,13 +48,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     MatPaginatorModule,
     ReactiveFormsModule,
+    MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
       { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
-      { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] }
+      { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] },
+      { path: 'createfence', component: CreateFenceComponent, canActivate: [AuthorizeGuard] }
     ]),
     BrowserAnimationsModule
   ],

@@ -1,10 +1,8 @@
 import { Component, OnInit, Inject, ViewChild } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { IFence } from '../interfaces/ifence';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FenceService } from '../services/fence.service';
 
 @Component({
@@ -14,15 +12,10 @@ import { FenceService } from '../services/fence.service';
 })
 export class FenceComponent implements OnInit {
 
-  isCreating = false;
-
-  fenceForm: FormGroup;
-
   public fences: IFence[];
   // tslint:disable-next-line: max-line-length
-  public newFence: IFence = { homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: undefined, typeOfFence: '', gates: undefined, curb: true, stain: true, bOrC: '', price: undefined };
 
-  displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'price'];
+  displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'price', 'delete'];
   dataSource: MatTableDataSource<IFence>;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -35,56 +28,14 @@ export class FenceComponent implements OnInit {
   }
 
   constructor(
-    private formBuilder: FormBuilder,
     private fenceService: FenceService
-  ) {
-    this.fenceForm = this.formBuilder.group({
-      inputHomeOwner: ['', Validators.compose([
-        Validators.required,
-        Validators.minLength(2)
-      ])],
-      inputAddress: ['', Validators.compose([
-        Validators.required,
-        Validators.minLength(1)
-      ])],
-      inputDate: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputBuilder: ['', Validators.compose([
-        Validators.required,
-        Validators.minLength(2)
-      ])],
-      inputFeetOfFence: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputHeightOfFence: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputTypeOfFence: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputGates: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputCurb: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputStain: ['', Validators.compose([
-        Validators.required
-      ])],
-      inputBOrC: ['', Validators.compose([
-        Validators.required,
-        Validators.minLength(3)
-      ])],
-      inputPrice: ['', Validators.compose([
-        Validators.required
-      ])]
-    });
-  }
+  ) { }
 
   async ngOnInit() {
     this.fences = await this.fenceService.getFences();
+
     const fence = this.fences;
+
     this.dataSource = new MatTableDataSource(fence);
 
     this.dataSource.sort = this.sort;
@@ -92,21 +43,9 @@ export class FenceComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  async save() {
-    await this.fenceService.addFence(this.newFence);
-
-    this.fences = await this.fenceService.getFences();
-
-    const fence = this.fences;
-    this.dataSource = new MatTableDataSource(fence);
-
-    this.dataSource.sort = this.sort;
-
-    this.dataSource.paginator = this.paginator;
-  }
-
-  createNew() {
-    this.isCreating = !this.isCreating;
+  delete(id) {
+    const fence = this.fences.findIndex(f => f.id === id);
+    this.fenceService.removeFence(fence);
   }
 
 }

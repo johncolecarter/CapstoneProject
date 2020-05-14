@@ -1,154 +1,13 @@
 <div class="body">
     <h1>Fence List</h1>
 
-    <div *ngIf="this.isCreating === false">
-        <button (click)="createNew()" class="btn">Create a new fence</button>
-    </div>
-
-    <div *ngIf="this.isCreating === true">
-        <button (click)="createNew()" class="btn">Close</button>
-    </div>
-
-    <!-- <div class="formBody" *ngIf="this.isCreating === true">
-        <div class="container text-center" style="max-width: 300px;margin: auto;">
-            <form [formGroup]="fenceForm">
-                <div>
-                    <label for="inputHomeOwner" class="label">Home Owner</label>
-                    <input type="text" formControlName="inputHomeOwner" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputHomeOwner.valid && this.fenceForm.controls.inputHomeOwner.touched">Home
-                        Owner
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputAddress" class="label">Address</label>
-                    <input type="text" formControlName="inputAddress" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputAddress.valid && this.fenceForm.controls.inputAddress.touched">Address
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputDate" class="label">Date</label>
-                    <input type="date" formControlName="inputDate" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputDate.valid && this.fenceForm.controls.inputDate.touched">Date
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputBuilder" class="label">Builder</label>
-                    <input type="text" formControlName="inputBuilder" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputBuilder.valid && this.fenceForm.controls.inputBuilder.touched">Builder
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputFeetOfFence" class="label">Feet of Fence</label>
-                    <input type="number" formControlName="inputFeetOfFence" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputFeetOfFence.valid && this.fenceForm.controls.inputFeetOfFence.touched">Feet
-                        of fence
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputHeightOfFence" class="label">Height of Fence</label>
-                    <input type="number" formControlName="inputHeightOfFence" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputHeightOfFence.valid && this.fenceForm.controls.inputHeightOfFence.touched">Height
-                        of fence
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputTypeOfFence" class="label">Type of Fence</label>
-                    <input type="text" formControlName="inputTypeOfFence" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputTypeOfFence.valid && this.fenceForm.controls.inputTypeOfFence.touched">Type
-                        of fence
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputGates" class="label">Number of gates</label>
-                    <input type="number" formControlName="inputGates" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputGates.valid && this.fenceForm.controls.inputGates.touched">Number
-                        of gates
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputCurb" class="label">Curb</label>
-                    <input type="text" formControlName="inputCurb" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputCurb.valid && this.fenceForm.controls.inputCurb.touched">Curb
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputStain" class="label">Stain</label>
-                    <input type="text" formControlName="inputStain" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputStain.valid && this.fenceForm.controls.inputStain.touched">Stain
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputBOrC" class="label">Brian or Chad</label>
-                    <input type="text" formControlName="inputBOrC" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputBOrC.valid && this.fenceForm.controls.inputBOrC.touched">Brian
-                        or Chad
-                        is
-                        required</label>
-                </div>
-                <div>
-                    <label for="inputPrice" class="label">Price</label>
-                    <input type="number" formControlName="inputPrice" class="form-control">
-                    <label class="alert alert-danger"
-                        *ngIf="!this.fenceForm.controls.inputPrice.valid && this.fenceForm.controls.inputPrice.touched">Price
-                        is
-                        required</label>
-                </div>
-                <button type="button" class="btn" [disabled]="!fenceForm.valid" (click)="createNew()"
-                    (click)="save()">Save</button>
-            </form>
+    <div>
+        <div class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/createfence']">Create a new fence</a>
         </div>
-    </div> -->
-
-    <div *ngIf="this.isCreating === true">
-        Home Owner
-        <input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
-        Address
-        <input [(ngModel)]="newFence.address" name="address" />
-        Date
-        <input [(ngModel)]="newFence.date" name="date" />
-        Builder
-        <input [(ngModel)]="newFence.builder" name="builder" />
-        Feet of Fence
-        <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" />
-        Heigth Of Fence
-        <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" />
-        Type Of Fence
-        <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" />
-        Gates
-        <input [(ngModel)]="newFence.gates" type="number" name="gates" />
-        Curb
-        <input [(ngModel)]="newFence.curb" name="curb" />
-        Stain
-        <input [(ngModel)]="newFence.stain" name="stain" />
-        Brian or Chad
-        <input [(ngModel)]="newFence.bOrC" name="bOrC" />
-        Price
-        <input [(ngModel)]="newFence.price" type="number" name="price" />
-        <button (click)="save()" (click)="createNew()">Save</button>
     </div>
 
-    <div *ngIf="this.isCreating === false">
+    <div>
         <div>
             <mat-form-field>
                 <mat-label>Filter</mat-label>
@@ -165,7 +24,6 @@
                     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                 </ng-container>
 
-                <!-- Name Column -->
                 <ng-container matColumnDef="homeOwner">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
                     <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
@@ -176,7 +34,6 @@
                     <td mat-cell *matCellDef="let element"> {{element.address}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
                 <ng-container matColumnDef="feetOfFence">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
                     <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
@@ -185,6 +42,13 @@
                 <ng-container matColumnDef="price">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
                     <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="delete">
+                    <th mat-header-cell *matHeaderCellDef> Delete </th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-raised-button color="warn" (click)="delete()">Delete</button>
+                    </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

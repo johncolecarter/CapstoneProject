@@ -1,0 +1,31 @@
+<div class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-dark" [routerLink]="['/fence']">Back to Fence List</a>
+</div>
+
+<div>
+    Home Owner
+    <input [(ngModel)]="newFence.homeOwner" name="homeOwner" />
+    Address
+    <input [(ngModel)]="newFence.address" name="address" />
+    Date
+    <input [(ngModel)]="newFence.date" name="date" />
+    Builder
+    <input [(ngModel)]="newFence.builder" name="builder" />
+    Feet of Fence
+    <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" />
+    Heigth Of Fence
+    <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" />
+    Type Of Fence
+    <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" />
+    Gates
+    <input [(ngModel)]="newFence.gates" type="number" name="gates" />
+    Curb
+    <input [(ngModel)]="newFence.curb" name="curb" />
+    Stain
+    <input [(ngModel)]="newFence.stain" name="stain" />
+    Brian or Chad
+    <input [(ngModel)]="newFence.bOrC" name="bOrC" />
+    Price
+    <input [(ngModel)]="newFence.price" type="number" name="price" />
+    <button (click)="save()" mat-raised-button color="primary">Add</button>
+</div>
