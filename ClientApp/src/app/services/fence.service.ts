@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IFence } from '../interfaces/ifence';
-import { FenceComponent } from '../fence/fence.component';
 import { Observable } from 'rxjs';
 
 @Injectable({
