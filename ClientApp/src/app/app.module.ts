@@ -7,13 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { StudentsComponent } from './students/students.component';
 import { ApiAuthorizationModule } from 'src/api-authorization/api-authorization.module';
 import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
-import { TeacherComponent } from './teacher/teacher.component';
 import { FenceComponent } from './fence/fence.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
@@ -30,10 +26,6 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
-    StudentsComponent,
-    TeacherComponent,
     FenceComponent,
     CreateFenceComponent
   ],
@@ -51,10 +43,6 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
     MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
-      { path: 'students', component: StudentsComponent, canActivate: [AuthorizeGuard] },
-      { path: 'teachers', component: TeacherComponent, canActivate: [AuthorizeGuard] },
       { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] },
       { path: 'createfence', component: CreateFenceComponent, canActivate: [AuthorizeGuard] }
     ]),
