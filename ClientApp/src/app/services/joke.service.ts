@@ -7,13 +7,11 @@ import { IJoke } from '../interfaces/IJoke';
 })
 export class JokeService {
 
-  public joke: IJoke;
-
-  readonly JOKE_URL = 'https://icanhazdadjoke.com/';
+  readonly JOKE_URL = 'https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes/';
 
   constructor(private http: HttpClient) { }
 
-  async getJoke() {
-    return await this.http.get<IJoke>(this.JOKE_URL).toPromise();
+  async getJoke(): Promise<IJoke[]> {
+    return await this.http.get<IJoke[]>(this.JOKE_URL).toPromise();
   }
 }

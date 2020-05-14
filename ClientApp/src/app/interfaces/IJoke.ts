@@ -1,3 +1,4 @@
 export interface IJoke {
-    joke: string;
+    setup: string;
+    punchline: string;
 }
