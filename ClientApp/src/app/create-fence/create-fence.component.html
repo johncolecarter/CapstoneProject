@@ -3,52 +3,32 @@
         to Fence List</a>
 </div>
 
-<div>
-    <input [(ngModel)]="newFence.homeOwner" name="homeOwner" placeholder="Home Owner" />
+<div class="form">
+    <input [(ngModel)]="newFence.homeOwner" name="homeOwner" placeholder="Home Owner" class="input" />
 
-    <input [(ngModel)]="newFence.address" name="address" placeholder="Address" />
+    <input [(ngModel)]="newFence.address" name="address" placeholder="Address" class="input" />
 
-    <input [(ngModel)]="newFence.date" name="date" placeholder="Date" />
+    <input [(ngModel)]="newFence.date" name="date" placeholder="Date" class="input" />
 
-    <input [(ngModel)]="newFence.builder" name="builder" placeholder="Builder" />
+    <input [(ngModel)]="newFence.builder" name="builder" placeholder="Builder" class="input" />
 
-    <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" placeholder="Feet of Fence" />
+    <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" placeholder="Feet of Fence"
+        class="input" />
 
-    <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" placeholder="Height of Fence" />
+    <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" placeholder="Height of Fence"
+        class="input" />
 
-    <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" placeholder="Type of Fence" />
+    <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" placeholder="Type of Fence" class="input" />
 
-    <input [(ngModel)]="newFence.gates" type="number" name="gates" placeholder="Gates" />
+    <input [(ngModel)]="newFence.gates" type="number" name="gates" placeholder="Gates" class="input" />
 
-    <input [(ngModel)]="newFence.curb" name="curb" placeholder="Curb" />
+    <input [(ngModel)]="newFence.curb" name="curb" placeholder="Curb" class="input" />
 
-    <input [(ngModel)]="newFence.stain" name="stain" placeholder="Stain" />
+    <input [(ngModel)]="newFence.stain" name="stain" placeholder="Stain" class="input" />
 
-    <input [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" />
+    <input [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" class="input" />
 
-    <input [(ngModel)]="newFence.price" type="number" name="price" placeholder="Price" />
+    <input [(ngModel)]="newFence.price" type="number" name="price" placeholder="Price" class="input" />
 
     <button (click)="save()" mat-raised-button color="primary">Add</button>
 </div>
-
-<!-- <div class="example-container">
-    <mat-form-field appearance="fill">
-        <mat-label>Address</mat-label>
-        <input matInput [(ngModel)]="newFence.address">
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker" [(ngModel)]="newFence.date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-        <mat-label>Height of Fence</mat-label>
-        <mat-select [(ngModel)]="newFence.heightOfFence">
-            <mat-option value="option">Option</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <br>
-</div> -->
