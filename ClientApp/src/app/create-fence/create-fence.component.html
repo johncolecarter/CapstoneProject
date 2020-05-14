@@ -1,5 +1,6 @@
 <div class="nav-item" [routerLinkActive]="['link-active']">
-    <a class="nav-link text-dark" [routerLink]="['/fence']">Back to Fence List</a>
+    <a class="nav-link text-dark" [routerLink]="['/fence']" mat-raised-button color="warn">Back
+        to Fence List</a>
 </div>
 
 <div>
@@ -29,3 +30,25 @@
 
     <button (click)="save()" mat-raised-button color="primary">Add</button>
 </div>
+
+<!-- <div class="example-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="newFence.address">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="newFence.date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Height of Fence</mat-label>
+        <mat-select [(ngModel)]="newFence.heightOfFence">
+            <mat-option value="option">Option</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+</div> -->

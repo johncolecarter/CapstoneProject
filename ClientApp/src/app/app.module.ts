@@ -20,6 +20,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CreateFenceComponent } from './create-fence/create-fence.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FenceDialogComponent } from './fence-dialog/fence-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
     NavMenuComponent,
     HomeComponent,
     FenceComponent,
-    CreateFenceComponent
+    CreateFenceComponent,
+    FenceDialogComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,6 +46,9 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] },

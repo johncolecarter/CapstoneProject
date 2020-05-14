@@ -15,7 +15,7 @@ export class FenceComponent implements OnInit {
   public fences: IFence[];
   // tslint:disable-next-line: max-line-length
 
-  displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'price', 'delete'];
+  displayedColumns: string[] = ['id', 'homeOwner', 'address', 'feetOfFence', 'date'];
   dataSource: MatTableDataSource<IFence>;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -43,9 +43,15 @@ export class FenceComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  delete(id) {
+  async delete(id: number) {
     const fence = this.fences.findIndex(f => f.id === id);
     this.fenceService.removeFence(fence);
+
+    this.dataSource = new MatTableDataSource();
+
+    this.dataSource.sort = this.sort;
+
+    this.dataSource.paginator = this.paginator;
   }
 
 }
