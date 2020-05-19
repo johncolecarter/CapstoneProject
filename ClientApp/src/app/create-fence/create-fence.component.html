@@ -1,76 +1,89 @@
-<div class="nav-item" [routerLinkActive]="['link-active']">
-    <a class="nav-link text-dark" [routerLink]="['/fence']" mat-raised-button color="warn">Back
-        to Fence List</a>
-</div><br>
-<form>
-    <div class="form-row">
-        <div class="form-group col-md-3">
-            <label>Home Owner</label>
-            <input [(ngModel)]="newFence.homeOwner" name="homeOwner" placeholder="Home Owner" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-6">
-            <label>Address</label>
-            <input [(ngModel)]="newFence.address" name="address" placeholder="Address" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-3">
-            <label>Date</label>
-            <input [(ngModel)]="newFence.date" name="date" placeholder="Date" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Builder</label>
-            <input [(ngModel)]="newFence.builder" name="builder" placeholder="Builder" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Feet of Fence</label>
-            <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" placeholder="Feet of Fence"
-                class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Height of Fence</label>
-            <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" placeholder="Height of Fence"
-                class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Type of Fence</label>
-            <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" placeholder="Type of Fence"
-                class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Gates</label>
-            <input [(ngModel)]="newFence.gates" type="number" name="gates" placeholder="Gates" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Curb</label>
-            <select [(ngModel)]="newFence.curb" name="curb" class="form-control">
-                <option [ngValue]="true" selected>
-                    True
-                </option>
-                <option [ngValue]="false">
-                    False
-                </option>
-            </select>
+<div *ngIf="this.alert === false">
+    <div class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark" [routerLink]="['/fence']" mat-raised-button color="warn">Back
+            to Fence List</a>
+    </div><br>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>Home Owner</label>
+                <input [(ngModel)]="newFence.homeOwner" name="homeOwner" placeholder="Home Owner"
+                    class="form-control" />
+            </div><br>
+            <div class="form-group col-md-6">
+                <label>Address</label>
+                <input [(ngModel)]="newFence.address" name="address" placeholder="Address" class="form-control" />
+            </div><br>
+            <div class="form-group col-md-3">
+                <label>Date</label>
+                <input [(ngModel)]="newFence.date" name="date" placeholder="Date" class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Builder</label>
+                <input [(ngModel)]="newFence.builder" name="builder" placeholder="Builder" class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Feet of Fence</label>
+                <input [(ngModel)]="newFence.feetOfFence" type="number" name="feetOfFence" placeholder="Feet of Fence"
+                    class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Height of Fence</label>
+                <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence"
+                    placeholder="Height of Fence" class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Type of Fence</label>
+                <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" placeholder="Type of Fence"
+                    class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Gates</label>
+                <input [(ngModel)]="newFence.gates" type="number" name="gates" placeholder="Gates"
+                    class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Curb</label>
+                <select [(ngModel)]="newFence.curb" name="curb" class="form-control">
+                    <option [ngValue]="true" selected>
+                        True
+                    </option>
+                    <option [ngValue]="false">
+                        False
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Stain</label>
+                <select [(ngModel)]="newFence.stain" name="stain" class="form-control">
+                    <option [ngValue]="true">
+                        True
+                    </option>
+                    <option [ngValue]="false">
+                        False
+                    </option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Brian or Chad</label>
+                <input [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" class="form-control" />
+            </div><br>
+            <div class="form-group col-md-4">
+                <label>Price</label>
+                <input [(ngModel)]="newFence.price" type="number" name="price" placeholder="Price"
+                    class="form-control" />
+            </div><br>
+            <div class="form-group col-md">
+                <button (click)="save()" (click)="alerting()" mat-raised-button color="warn"
+                    class="form-control">Add</button>
+            </div>
         </div>
-        <div class="form-group col-md-4">
-            <label>Stain</label>
-            <select [(ngModel)]="newFence.stain" name="stain" class="form-control">
-                <option [ngValue]="true">
-                    True
-                </option>
-                <option [ngValue]="false">
-                    False
-                </option>
-            </select>
-        </div>
-        <div class="form-group col-md-4">
-            <label>Brian or Chad</label>
-            <input [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" class="form-control" />
-        </div><br>
-        <div class="form-group col-md-4">
-            <label>Price</label>
-            <input [(ngModel)]="newFence.price" type="number" name="price" placeholder="Price" class="form-control" />
-        </div><br>
-        <div class="form-group col-md">
-            <button (click)="save()" mat-raised-button color="warn" class="form-control">Add</button>
-        </div>
+    </form>
+</div>
+
+<div *ngIf="this.alert === true">
+    <div class="alert alert-dark" role="alert">
+        <h1>Your new fence was added!</h1>
+        <button (click)="back()" mat-raised-button color="warn">Back to fence list</button>
     </div>
-</form>
+</div>
