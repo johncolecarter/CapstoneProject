@@ -29,13 +29,20 @@
             </div><br>
             <div class="form-group col-md-4">
                 <label class="label">Height of Fence</label>
-                <input [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence"
-                    placeholder="Height of Fence" class="form-control" />
+                <select [(ngModel)]="newFence.heightOfFence" type="number" name="heightOfFence" class="form-control">
+                    <option [ngValue]=6>6</option>
+                    <option [ngValue]=7>7</option>
+                    <option [ngValue]=8>8</option>
+                    <option [ngValue]=9>9</option>
+                    <option [ngValue]=10>10</option>
+                </select>
             </div><br>
             <div class="form-group col-md-4">
                 <label class="label">Type of Fence</label>
-                <input [(ngModel)]="newFence.typeOfFence" name="typeOfFence" placeholder="Type of Fence"
-                    class="form-control" />
+                <select [(ngModel)]="newFence.typeOfFence" type="text" name="typeOfFence" class="form-control">
+                    <option *ngFor="let type of typeConstants" [ngValue]="type">{{type}}
+                    </option>
+                </select>
             </div><br>
             <div class="form-group col-md-4">
                 <label class="label">Gates</label>
@@ -66,7 +73,9 @@
             </div>
             <div class="form-group col-md-4">
                 <label class="label">Brian or Chad</label>
-                <input [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" class="form-control" />
+                <select [(ngModel)]="newFence.bOrC" name="bOrC" placeholder="B or C" class="form-control">
+                    <option *ngFor="let bc of brianChad" [ngValue]="bc">{{bc}}</option>
+                </select>
             </div><br>
             <div class="form-group col-md-4">
                 <label class="label">Price</label>

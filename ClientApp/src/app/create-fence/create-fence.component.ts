@@ -14,8 +14,12 @@ export class CreateFenceComponent implements OnInit {
 
   public alert = false;
 
+  public typeConstants = ['Regular', 'Board on Board', 'Dog Eared', 'Horizontal', 'Horizontal BOB', 'Regular w/ 4in Overlay'];
+
+  public brianChad = ['Chad', 'Brian'];
+
   // tslint:disable-next-line: max-line-length
-  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: undefined, typeOfFence: '', gates: undefined, curb: true, stain: true, bOrC: '', price: undefined };
+  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: 7, typeOfFence: 'Choose one...', gates: undefined, curb: true, stain: true, bOrC: 'Chad', price: undefined };
 
   constructor(
     private fenceService: FenceService,

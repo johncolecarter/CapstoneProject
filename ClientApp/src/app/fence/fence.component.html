@@ -20,11 +20,6 @@
         <div>
             <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
 
-                <ng-container matColumnDef="id">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-                </ng-container>
-
                 <ng-container matColumnDef="homeOwner">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
                     <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
@@ -43,6 +38,11 @@
                 <ng-container matColumnDef="date">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
                     <td mat-cell *matCellDef="let element"> {{element.date | date: 'longDate'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="bOrC">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> B or C </th>
+                    <td mat-cell *matCellDef="let element"> {{element.bOrC}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="price">
