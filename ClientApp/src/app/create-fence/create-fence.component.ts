@@ -12,7 +12,7 @@ export class CreateFenceComponent implements OnInit {
   public fences: IFence[];
 
   // tslint:disable-next-line: max-line-length
-  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: undefined, typeOfFence: '', gates: undefined, curb: undefined, stain: undefined, bOrC: '', price: undefined };
+  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: undefined, typeOfFence: '', gates: undefined, curb: true, stain: true, bOrC: '', price: undefined };
 
   constructor(private fenceService: FenceService) { }
 
