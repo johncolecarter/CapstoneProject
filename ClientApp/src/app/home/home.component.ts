@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IJoke } from '../interfaces/IJoke';
 import { JokeService } from '../services/joke.service';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-home',
