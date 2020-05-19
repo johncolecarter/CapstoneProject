@@ -1,4 +1,7 @@
 export interface IJoke {
-    id: string;
+    category: string;
+    type: string;
     joke: string;
+    id: number;
+    error: boolean;
 }

@@ -1,12 +1,12 @@
-<!-- <div>
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" width="50%">
-
-    <ng-container matColumnDef="joke">
-      <th mat-header-cell *matHeaderCellDef> Joke </th>
-      <td mat-cell *matCellDef="let element"> {{element.joke}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div> -->
+<div class="container">
+  <div class="row">
+    <div class="jokeBox">
+      <h1>
+        Want to hear a joke? <button type="button" (click)="getJoke()" class="btn btn-light"> Click here </button>
+      </h1>
+      <p>
+        {{jokes.joke}}
+      </p>
+    </div>
+  </div>
+</div>

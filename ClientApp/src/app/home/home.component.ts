@@ -6,22 +6,20 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  public jokes: IJoke[];
 
-  displayedColumns: string[] = ['joke'];
-  dataSource: MatTableDataSource<IJoke>;
+  public jokes: IJoke[];
 
   constructor(private jokeService: JokeService) {
   }
 
   async ngOnInit() {
-    // this.jokes = await this.jokeService.getJoke();
+  }
 
-    // const joke = this.jokes;
-
-    // this.dataSource = new MatTableDataSource(joke);
+  async getJoke() {
+    this.jokes = await this.jokeService.getJoke();
   }
 
 }
