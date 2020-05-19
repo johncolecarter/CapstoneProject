@@ -7,8 +7,8 @@
         </div>
     </div>
 
-    <div>
-        <div>
+    <div class="table">
+        <div class="filter">
             <mat-form-field>
                 <mat-label>Filter</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
@@ -32,6 +32,11 @@
                 <ng-container matColumnDef="feetOfFence">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
                     <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="typeOfFence">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type of Fence </th>
+                    <td mat-cell *matCellDef="let element"> {{element.typeOfFence}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="date">

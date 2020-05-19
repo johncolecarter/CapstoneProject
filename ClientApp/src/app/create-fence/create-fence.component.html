@@ -94,6 +94,7 @@
 <div *ngIf="this.alert === true">
     <div class="alert alert-dark" role="alert" style="margin-top: 50px;">
         <h1>Your new fence was added!</h1>
-        <button (click)="back()" mat-raised-button color="warn">Back to fence list</button>
+        <button (click)="back()" mat-raised-button color="warn" style="margin-right: 10px;">Back to fence list</button>
+        <button (click)="alerting()" mat-raised-button color="warn">Add another</button>
     </div>
 </div>
