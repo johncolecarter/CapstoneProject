@@ -21,3 +21,7 @@ header {
   background: rgb(58, 57, 57);
   color: white;
 }
+
+.navbar {
+   border-bottom: 2px solid rgba(173, 172, 172, 0.2)
+}
