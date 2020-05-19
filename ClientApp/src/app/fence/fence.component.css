@@ -1,18 +1,30 @@
 .btn {
     box-shadow: 0 4px 8px 0 rgba(68, 68, 68, 0.2), 0 6px 20px 0 rgba(68, 68, 68, 0.2);
     margin-top: 20px;
+    margin-left: 10px;
 }
 
 .table {
     margin-top: 10px;
-    background: rgb(59, 59, 59);
     padding: 10px;
-    border-radius: 5px;
-
 }
 
 .filter {
-    background: rgb(162, 163, 163);
+    background: rgb(59, 59, 59);
     border-radius: 5px;
     padding-left: 5px;
+    box-shadow: 0 4px 8px 0 rgba(110, 110, 110, 0.2), 0 6px 20px 0 rgba(110, 110, 110, 0.2);
+}
+
+.matTable {
+    background: rgb(27, 27, 27);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(85, 85, 85, 0.2), 0 6px 20px 0 rgba(85, 85, 85, 0.2);
+}
+
+.page {
+    background: rgb(59, 59, 59);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(85, 85, 85, 0.2), 0 6px 20px 0 rgba(85, 85, 85, 0.2);
 }

@@ -10,54 +10,54 @@
     <div class="table">
         <div class="filter">
             <mat-form-field>
-                <mat-label>Filter</mat-label>
-                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+                <mat-label class="text-light">Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" class="text-light">
             </mat-form-field>
 
         </div>
 
         <div>
-            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%" class="matTable">
 
                 <ng-container matColumnDef="homeOwner">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Home Owner </th>
-                    <td mat-cell *matCellDef="let element"> {{element.homeOwner}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Home Owner </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.homeOwner}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="address">
-                    <th mat-header-cell *matHeaderCellDef> Address </th>
-                    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="text-light"> Address </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.address}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="feetOfFence">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Feet of Fence </th>
-                    <td mat-cell *matCellDef="let element"> {{element.feetOfFence}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Feet of Fence </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.feetOfFence}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="typeOfFence">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type of Fence </th>
-                    <td mat-cell *matCellDef="let element"> {{element.typeOfFence}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Type of Fence </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.typeOfFence}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="date">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-                    <td mat-cell *matCellDef="let element"> {{element.date | date: 'longDate'}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Date </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.date | date: 'longDate'}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="bOrC">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> B or C </th>
-                    <td mat-cell *matCellDef="let element"> {{element.bOrC}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> B or C </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.bOrC}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="price">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
-                    <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Price </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.price | currency}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
-            <mat-paginator [pageSizeOptions]="[10, 5, 25]" showFirstLastButtons></mat-paginator>
+            <mat-paginator [pageSizeOptions]="[10, 5, 25]" showFirstLastButtons class="page text-light"></mat-paginator>
         </div>
     </div>
 </div>

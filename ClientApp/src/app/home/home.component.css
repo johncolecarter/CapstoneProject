@@ -1,5 +1,5 @@
 .jokeBox {
-    width: 33%;
+    width: 40%;
     background: black;
     color: white;
     padding: 10px;
@@ -9,5 +9,5 @@
 }
 
 p {
-    font-size: 15px;
+    font-size: 20px;
 }

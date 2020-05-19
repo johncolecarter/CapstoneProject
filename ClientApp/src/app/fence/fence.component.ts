@@ -43,15 +43,4 @@ export class FenceComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  async delete(id: number) {
-    const fence = this.fences.findIndex(f => f.id === id);
-    this.fenceService.removeFence(fence);
-
-    this.dataSource = new MatTableDataSource();
-
-    this.dataSource.sort = this.sort;
-
-    this.dataSource.paginator = this.paginator;
-  }
-
 }
