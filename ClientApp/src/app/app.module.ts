@@ -23,8 +23,6 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FenceDialogComponent } from './fence-dialog/fence-dialog.component';
-import { JokeComponent } from './joke/joke.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +30,7 @@ import { JokeComponent } from './joke/joke.component';
     NavMenuComponent,
     HomeComponent,
     FenceComponent,
-    CreateFenceComponent,
-    FenceDialogComponent,
-    JokeComponent
+    CreateFenceComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

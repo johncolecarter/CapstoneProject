@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IJoke } from '../interfaces/IJoke';
 
 @Injectable({
@@ -7,11 +7,16 @@ import { IJoke } from '../interfaces/IJoke';
 })
 export class JokeService {
 
-  readonly JOKE_URL = 'https://us-central1-dadsofunny.cloudfunctions.net/DadJokes/random/jokes/';
+  readonly JOKE_URL = 'https://icanhazdadjoke.com/';
 
   constructor(private http: HttpClient) { }
 
-  async getJoke(): Promise<IJoke[]> {
-    return await this.http.get<IJoke[]>(this.JOKE_URL).toPromise();
-  }
+  // async getJoke(): Promise<IJoke[]> {
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type': 'application/json'
+  //     })
+  //   };
+  //   return await this.http.get<IJoke[]>(this.JOKE_URL).toPromise();
+  // }
 }

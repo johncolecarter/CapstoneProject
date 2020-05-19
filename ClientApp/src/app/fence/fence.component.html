@@ -1,5 +1,5 @@
 <div class="body">
-    <h1>Fence List</h1>
+    <h1 style="color: white;">Fence List</h1>
 
     <div>
         <div class="nav-item" [routerLinkActive]="['link-active']">
@@ -43,6 +43,11 @@
                 <ng-container matColumnDef="date">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
                     <td mat-cell *matCellDef="let element"> {{element.date | date: 'longDate'}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="price">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                    <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.jokes = await this.jokeService.getJoke();
+    // this.jokes = await this.jokeService.getJoke();
 
-    const joke = this.jokes;
+    // const joke = this.jokes;
 
-    this.dataSource = new MatTableDataSource(joke);
+    // this.dataSource = new MatTableDataSource(joke);
   }
 
 }
