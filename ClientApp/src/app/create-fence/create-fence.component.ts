@@ -19,7 +19,7 @@ export class CreateFenceComponent implements OnInit {
   public brianChad = ['Chad', 'Brian'];
 
   // tslint:disable-next-line: max-line-length
-  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: 7, typeOfFence: 'Choose one...', gates: undefined, curb: true, stain: true, bOrC: 'Chad', price: undefined };
+  public newFence: IFence = { id: undefined, homeOwner: '', address: '', date: new Date(), builder: '', feetOfFence: undefined, heightOfFence: 7, typeOfFence: 'Regular', gates: undefined, curb: true, stain: true, bOrC: 'Chad', price: undefined };
 
   constructor(
     private fenceService: FenceService,
