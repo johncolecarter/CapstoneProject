@@ -39,16 +39,12 @@ namespace capstone.Controllers
             return fence;
         }
 
-        [HttpDelete("{id}")]
-        public void Remove(int id)
+        [HttpGet("{id}")]
+        public Fence Get(int id)
         {
             var fence = _context.Fence.FirstOrDefault(f => f.Id == id);
 
-            if (fence != null)
-            {
-                _context.Fence.Remove(fence);
-                _context.SaveChanges();
-            }
+            return fence;
         }
     }
 }
