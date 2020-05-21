@@ -23,6 +23,7 @@ import { CreateFenceComponent } from './create-fence/create-fence.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FenceCardComponent } from './fence-card/fence-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     NavMenuComponent,
     HomeComponent,
     FenceComponent,
-    CreateFenceComponent
+    CreateFenceComponent,
+    FenceCardComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -49,6 +51,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: 'fence/:id', component: FenceCardComponent },
       { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] },
       { path: 'createfence', component: CreateFenceComponent, canActivate: [AuthorizeGuard] }
     ]),

@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { FenceService } from '../services/fence.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fence',
@@ -13,9 +14,10 @@ import { FenceService } from '../services/fence.service';
 export class FenceComponent implements OnInit {
 
   public fences: IFence[];
+  public fence: IFence;
   // tslint:disable-next-line: max-line-length
 
-  displayedColumns: string[] = ['homeOwner', 'address', 'feetOfFence', 'typeOfFence', 'date', 'bOrC', 'price'];
+  displayedColumns: string[] = ['homeOwner', 'address', 'feetOfFence', 'typeOfFence', 'date', 'bOrC', 'price', 'viewMore'];
   dataSource: MatTableDataSource<IFence>;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;
@@ -28,7 +30,8 @@ export class FenceComponent implements OnInit {
   }
 
   constructor(
-    private fenceService: FenceService
+    private fenceService: FenceService,
+    private router: Router
   ) { }
 
   async ngOnInit() {

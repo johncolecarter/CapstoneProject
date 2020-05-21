@@ -54,6 +54,12 @@
                     <td mat-cell *matCellDef="let element" class="text-light"> {{element.price | currency}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="viewMore">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> <a [routerLink]="element.id">View
+                            More</a></td>
+                </ng-container>
+
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>

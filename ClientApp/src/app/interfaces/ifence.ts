@@ -12,5 +12,4 @@ export interface IFence {
     stain: boolean;
     bOrC: string;
     price: number;
-
 }

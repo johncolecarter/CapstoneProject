@@ -22,7 +22,7 @@ export class FenceService {
     return await this.http.post<IFence>(this.baseUrl + 'fence', fence).toPromise();
   }
 
-  removeFence(id: number): Observable<void> {
-    return this.http.delete<void>(this.baseUrl + 'fence/' + id);
+  async getById(id: number) {
+    return this.http.get(this.baseUrl + 'fence/' + id).toPromise();
   }
 }
