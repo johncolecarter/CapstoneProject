@@ -1,1 +1,34 @@
-<p>price works!</p>
+<div class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-light" style="margin-top: 20px;" [routerLink]="['/fence']" mat-raised-button
+        color="warn">Back
+        to Fence List</a>
+</div><br>
+
+<form>
+    <div class="form-group col-md-4">
+        <label class="text-light">Feet of Fence</label>
+        <input [(ngModel)]="price.feetOfFence" type="number" name="feetOfFence" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label class="text-light">Heigt of Fence</label>
+        <input [(ngModel)]="price.heightOfFence" type="number" name="heigtOfFence" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label class="text-light">Type of Fence</label>
+        <select [(ngModel)]="price.typeOfFence" type="text" name="typeOfFence" class="form-control">
+            <option *ngFor="let type of typeConstants" [ngValue]="type">{{type}}
+            </option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label class="text-light">Number of Gates</label>
+        <input [(ngModel)]="price.gates" type="number" name="gates" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label class="text-light">Curb</label>
+        <input [(ngModel)]="price.curb" type="number" name="curb" class="form-control">
+    </div><br>
+    <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()">Get Estimate</button>
+</form><br>
+
+<h1 class="text-light"> Total Cost: {{this.total}}</h1>
