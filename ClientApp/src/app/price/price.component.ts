@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPrice } from '../interfaces/IPrice';
+import { IMaterial } from '../interfaces/IMaterial';
 
 @Component({
   selector: 'app-price',
@@ -13,6 +14,8 @@ export class PriceComponent implements OnInit {
   public typeConstants = ['Regular', 'Board on Board', 'Dog Eared', 'Horizontal', 'Horizontal BOB', 'Regular w/ 4in Overlay'];
 
   total: number;
+
+  public materialNeeded: IMaterial = { poles: 0, pickets: 0, rails: 0 };
 
   constructor() { }
 
@@ -158,6 +161,26 @@ export class PriceComponent implements OnInit {
         break;
       }
     }
+
+    if (this.price.feetOfFence < 150) {
+      this.materialNeeded.poles = 20;
+      this.materialNeeded.pickets = 1;
+      this.materialNeeded.rails = .5;
+
+    } else if (this.price.feetOfFence < 250) {
+
+      this.materialNeeded.poles = 30;
+      this.materialNeeded.pickets = 1.5;
+      this.materialNeeded.rails = .5;
+
+    } else if (this.price.feetOfFence < 350) {
+
+      this.materialNeeded.poles = 40;
+      this.materialNeeded.pickets = 2;
+      this.materialNeeded.rails = 1;
+
+    }
+
   }
 
 }

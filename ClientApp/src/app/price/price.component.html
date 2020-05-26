@@ -4,31 +4,46 @@
         to Fence List</a>
 </div><br>
 
-<form>
-    <div class="form-group col-md-4">
-        <label class="text-light">Feet of Fence</label>
-        <input [(ngModel)]="price.feetOfFence" type="number" name="feetOfFence" class="form-control">
+<div class="container">
+    <div class="row justify-content-around">
+        <div class="col">
+            <form>
+                <div class="form-group col-md-6">
+                    <label class="text-light">Feet of Fence</label>
+                    <input [(ngModel)]="price.feetOfFence" type="number" name="feetOfFence" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-light">Heigt of Fence</label>
+                    <input [(ngModel)]="price.heightOfFence" type="number" name="heigtOfFence" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-light">Type of Fence</label>
+                    <select [(ngModel)]="price.typeOfFence" type="text" name="typeOfFence" class="form-control">
+                        <option *ngFor="let type of typeConstants" [ngValue]="type">{{type}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-light">Number of Gates</label>
+                    <input [(ngModel)]="price.gates" type="number" name="gates" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="text-light">Any Extra Costs</label>
+                    <input [(ngModel)]="price.extra" type="number" name="extra" class="form-control">
+                </div><br>
+                <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()">Get
+                    Estimate</button>
+            </form>
+        </div>
+        <div class="col">
+            <h1 class="text-light"> Total Cost: {{this.total | currency}}</h1>
+            <hr>
+            <h1 class="text-light"><b>Material Needed</b></h1>
+            <div class="text-light" style="font-size: 20px;">
+                Poles: {{materialNeeded.poles}}<br>
+                Bundle(s) of Pickets: {{materialNeeded.pickets}}<br>
+                Bundle(s) of Rails: {{materialNeeded.rails}}
+            </div>
+        </div>
     </div>
-    <div class="form-group col-md-4">
-        <label class="text-light">Heigt of Fence</label>
-        <input [(ngModel)]="price.heightOfFence" type="number" name="heigtOfFence" class="form-control">
-    </div>
-    <div class="form-group col-md-4">
-        <label class="text-light">Type of Fence</label>
-        <select [(ngModel)]="price.typeOfFence" type="text" name="typeOfFence" class="form-control">
-            <option *ngFor="let type of typeConstants" [ngValue]="type">{{type}}
-            </option>
-        </select>
-    </div>
-    <div class="form-group col-md-4">
-        <label class="text-light">Number of Gates</label>
-        <input [(ngModel)]="price.gates" type="number" name="gates" class="form-control">
-    </div>
-    <div class="form-group col-md-4">
-        <label class="text-light">Any Extra Costs</label>
-        <input [(ngModel)]="price.extra" type="number" name="extra" class="form-control">
-    </div><br>
-    <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()">Get Estimate</button>
-</form><br>
-
-<h1 class="text-light"> Total Cost: {{this.total | currency}}</h1>
+</div>

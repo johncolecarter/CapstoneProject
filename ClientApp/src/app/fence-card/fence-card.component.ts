@@ -23,9 +23,9 @@ export class FenceCardComponent implements OnInit {
   async ngOnInit() {
     const id = this.activatedRouter.snapshot.params[this.ID];
 
-    const fence = await this.fenceService.getById(id);
+    const fences = await this.fenceService.getById(id);
 
-    return fence;
+    return fences;
   }
 
   back() {
