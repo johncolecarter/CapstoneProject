@@ -1,15 +1,20 @@
 <div class="body">
-    <div>
-        <div class="nav-item" [routerLinkActive]="['link-active']">
-            <a class=" btn nav-link text-light" [routerLink]="['/createfence']" mat-raised-button color="warn">Create a
-                new
-                fence</a>
-        </div>
-        <div class="nav-item" [routerLinkActive]="['link-active']">
-            <a class=" btn nav-link text-light" [routerLink]="['/estimator']" mat-raised-button color="warn">Estimate a
-                Price</a>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="btn nav-link col-12 text-light" [routerLink]="['/createfence']" mat-raised-button color="warn"
+                    style="margin-right: 20px;">Create a
+                    new
+                    fence</a>
+            </div>
+            <div class="nav-item" [routerLinkActive]="['link-active']">
+                <a class="btn nav-link col-12 text-light" [routerLink]="['/estimator']" mat-raised-button color="warn"
+                    style="margin-left: 20px;">Estimate a
+                    Price</a>
+            </div>
         </div>
     </div>
+
 
     <div class="table">
         <div class="filter">
