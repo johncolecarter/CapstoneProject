@@ -12,7 +12,7 @@ export class FenceCardComponent implements OnInit {
 
   readonly ID = 'id';
 
-  fence: IFence;
+  public fence: IFence;
 
   constructor(
     private fenceService: FenceService,
@@ -24,6 +24,8 @@ export class FenceCardComponent implements OnInit {
     const id = this.activatedRouter.snapshot.params[this.ID];
 
     const fences = await this.fenceService.getById(id);
+
+    console.log(fences);
 
     return fences;
   }
