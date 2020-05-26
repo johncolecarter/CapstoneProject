@@ -25,10 +25,10 @@
         <input [(ngModel)]="price.gates" type="number" name="gates" class="form-control">
     </div>
     <div class="form-group col-md-4">
-        <label class="text-light">Curb</label>
-        <input [(ngModel)]="price.curb" type="number" name="curb" class="form-control">
+        <label class="text-light">Any Extra Costs</label>
+        <input [(ngModel)]="price.extra" type="number" name="extra" class="form-control">
     </div><br>
     <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()">Get Estimate</button>
 </form><br>
 
-<h1 class="text-light"> Total Cost: {{this.total}}</h1>
+<h1 class="text-light"> Total Cost: {{this.total | currency}}</h1>
