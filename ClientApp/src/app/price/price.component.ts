@@ -179,8 +179,12 @@ export class PriceComponent implements OnInit {
       this.materialNeeded.pickets = 2;
       this.materialNeeded.rails = 1;
 
+    } else if (this.price.feetOfFence < 450) {
+
+      this.materialNeeded.poles = 50;
+      this.materialNeeded.pickets = 2.5;
+      this.materialNeeded.rails = 1.5;
+
     }
-
   }
-
 }
