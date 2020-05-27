@@ -11,7 +11,9 @@ export class HomeComponent implements OnInit {
 
   public jokes: IJoke[];
 
-  constructor(private jokeService: JokeService) {
+  constructor(
+    private jokeService: JokeService
+  ) {
   }
 
   async ngOnInit() {

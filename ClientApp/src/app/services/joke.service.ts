@@ -7,7 +7,7 @@ import { IJoke } from '../interfaces/IJoke';
 })
 export class JokeService {
 
-  readonly JOKE_URL = 'https://sv443.net/jokeapi/v2/joke/Any?type=single';
+  readonly JOKE_URL = 'https://sv443.net/jokeapi/v2/joke/Miscellaneous?type=single';
 
   constructor(private http: HttpClient) { }
 
