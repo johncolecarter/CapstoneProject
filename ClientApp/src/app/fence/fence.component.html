@@ -29,18 +29,22 @@
             <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" width="100%" class="matTable">
 
                 <ng-container matColumnDef="homeOwner">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Home Owner </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.homeOwner}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light" style="font-size: 20px;">
+                        Home Owner </th>
+                    <td mat-cell *matCellDef="let element" class="text-light" style="font-size: 20px;">
+                        {{element.homeOwner}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="address">
-                    <th mat-header-cell *matHeaderCellDef class="text-light"> Address </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.address}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="text-light" style="font-size: 20px;"> Address </th>
+                    <td mat-cell *matCellDef="let element" class="text-light" style="font-size: 20px;">
+                        {{element.address}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="builder">
-                    <th mat-header-cell *matHeaderCellDef class="text-light"> Builder </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.builder}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="text-light" style="font-size: 20px;"> Builder </th>
+                    <td mat-cell *matCellDef="let element" class="text-light" style="font-size: 20px;">
+                        {{element.builder}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="feetOfFence">
@@ -54,8 +58,10 @@
                 </ng-container>
 
                 <ng-container matColumnDef="date">
-                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Date </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.date | date: 'longDate'}} </td>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light" style="font-size: 20px;">
+                        Date </th>
+                    <td mat-cell *matCellDef="let element" class="text-light" style="font-size: 20px;">
+                        {{element.date | date: 'longDate'}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="bOrC">
@@ -70,14 +76,15 @@
 
                 <ng-container matColumnDef="viewMore">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"><a [routerLink]="element.id">View
+                    <td mat-cell *matCellDef="let element" class="text-light"><a [routerLink]="element.id"
+                            style="font-size: 20px;">View
                             More</a></td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
-            <mat-paginator [pageSizeOptions]="[10, 5, 25]" showFirstLastButtons class="page text-light"></mat-paginator>
+            <mat-paginator [pageSizeOptions]="[10, 5, 20]" showFirstLastButtons class="page text-light"></mat-paginator>
         </div>
     </div>
 </div>
