@@ -17,7 +17,7 @@ export class FenceComponent implements OnInit {
   public fence: IFence;
   // tslint:disable-next-line: max-line-length
 
-  displayedColumns: string[] = ['homeOwner', 'address', 'feetOfFence', 'typeOfFence', 'date', 'bOrC', 'price', 'viewMore'];
+  displayedColumns: string[] = ['homeOwner', 'address', 'builder', 'date', 'viewMore'];
   dataSource: MatTableDataSource<IFence>;
 
   @ViewChild(MatSort, { static: true }) sort: MatSort;

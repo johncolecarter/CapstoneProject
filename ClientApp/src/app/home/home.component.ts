@@ -9,7 +9,7 @@ import { JokeService } from '../services/joke.service';
 })
 export class HomeComponent implements OnInit {
 
-  public jokes: any;
+  public joke: any;
 
   constructor(
     private jokeService: JokeService
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   async getJoke() {
     const jokes = await this.jokeService.getJoke();
 
-    this.jokes = jokes;
+    this.joke = jokes;
 
   }
 

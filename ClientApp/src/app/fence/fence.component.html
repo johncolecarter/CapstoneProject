@@ -38,6 +38,11 @@
                     <td mat-cell *matCellDef="let element" class="text-light"> {{element.address}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="builder">
+                    <th mat-header-cell *matHeaderCellDef class="text-light"> Builder </th>
+                    <td mat-cell *matCellDef="let element" class="text-light"> {{element.builder}} </td>
+                </ng-container>
+
                 <ng-container matColumnDef="feetOfFence">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> Feet of Fence </th>
                     <td mat-cell *matCellDef="let element" class="text-light"> {{element.feetOfFence}} </td>
@@ -65,7 +70,7 @@
 
                 <ng-container matColumnDef="viewMore">
                     <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-light"> </th>
-                    <td mat-cell *matCellDef="let element" class="text-light"> <a [routerLink]="element.id">View
+                    <td mat-cell *matCellDef="let element" class="text-light"><a [routerLink]="element.id">View
                             More</a></td>
                 </ng-container>
 
