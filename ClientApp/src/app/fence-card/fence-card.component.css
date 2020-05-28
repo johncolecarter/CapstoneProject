@@ -7,3 +7,12 @@
     border: none;
     font-size: 25px;
 }
+
+.descrip {
+    color: rgb(177, 174, 174);
+    border-bottom: 1px solid red;
+}
+
+.data {
+    border-bottom: 1px solid red;
+}
