@@ -1,0 +1,71 @@
+<input type="text" [ngModel]="formattedTokens" class="form-control-sm form-control text-right" readonly>
+
+<input type="text" [ngModel]="input" class="form-control form-control-lg text-right" readonly>
+
+<div class="row mt-3">
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="reset()">AC</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator('(')">(</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator(')')">)</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator('/')">/</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('1')">1</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('2')">2</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('3')">3</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator('*')">x</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('4')">4</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('5')">5</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('6')">6</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator('+')">+</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('7')">7</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('8')">8</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('9')">9</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary btn-block" (click)="execOperator('-')">-</button>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-6">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('0')">0</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-secondary btn-block" (click)="insertChar('.')">,</button>
+    </div>
+    <div class="col-3">
+        <button autofocus class="btn btn-primary btn-block" (click)="evaluate()">=</button>
+    </div>
+</div>

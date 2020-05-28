@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FenceCardComponent } from './fence-card/fence-card.component';
 import { PriceComponent } from './price/price.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PriceComponent } from './price/price.component';
     FenceComponent,
     CreateFenceComponent,
     FenceCardComponent,
-    PriceComponent
+    PriceComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
