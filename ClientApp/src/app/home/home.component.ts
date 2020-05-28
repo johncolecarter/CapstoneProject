@@ -13,14 +13,17 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private jokeService: JokeService
-  ) {
-  }
+  ) { }
 
   async ngOnInit() {
   }
 
   async getJoke() {
-    this.jokes = await this.jokeService.getJoke();
+    const jokes = await this.jokeService.getJoke();
+
+    this.jokes = jokes;
+
   }
+
 
 }
