@@ -1,0 +1,9 @@
+.card {
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 400px;
+    background: rgb(34, 34, 34);
+    padding: 10px;
+    border: none;
+    font-size: 25px;
+}

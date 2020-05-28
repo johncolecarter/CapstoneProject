@@ -53,8 +53,8 @@ import { PriceComponent } from './price/price.component';
     MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fence/:id', component: FenceCardComponent, canActivate: [AuthorizeGuard] },
-      { path: 'fence', component: FenceComponent, canActivate: [AuthorizeGuard] },
+      { path: 'fences/:id', component: FenceCardComponent, canActivate: [AuthorizeGuard] },
+      { path: 'fences', component: FenceComponent, canActivate: [AuthorizeGuard] },
       { path: 'estimator', component: PriceComponent, canActivate: [AuthorizeGuard] },
       { path: 'createfence', component: CreateFenceComponent, canActivate: [AuthorizeGuard] }
     ]),

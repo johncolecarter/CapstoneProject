@@ -9,7 +9,7 @@ import { JokeService } from '../services/joke.service';
 })
 export class HomeComponent implements OnInit {
 
-  public jokes: IJoke[];
+  public jokes: any;
 
   constructor(
     private jokeService: JokeService

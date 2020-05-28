@@ -33,7 +33,7 @@ export class CreateFenceComponent implements OnInit {
   }
 
   back() {
-    this.router.navigate(['fence']);
+    this.router.navigate(['fences']);
   }
 
   alerting() {

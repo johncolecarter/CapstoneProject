@@ -12,7 +12,13 @@ export class FenceCardComponent implements OnInit {
 
   readonly ID = 'id';
 
-  public fence: IFence;
+  public fence: any;
+
+  // tslint:disable-next-line: max-line-length
+  public descripConstants: any = ['Address:', 'Date:', 'Builder:', 'Feet of Fence:', 'Height of Fence:', 'Type of Fence:', 'Number of Gates:', 'Curb:', 'Stain:', 'Brian or Chad:', 'Price:'];
+
+  // tslint:disable-next-line: max-line-length
+  public dataConstants: any = ['address', 'date', 'builder', 'feetOfFence', 'heigthOfFence', 'typeOfFence', 'gates', 'curb', 'stain', 'bOrC', 'price'];
 
   constructor(
     private fenceService: FenceService,
@@ -21,15 +27,18 @@ export class FenceCardComponent implements OnInit {
   ) { }
 
   async ngOnInit() {
+
     const id = this.activatedRouter.snapshot.params[this.ID];
 
     const fence = await this.fenceService.getById(id);
 
-    return fence;
+    this.fence = fence;
+
+    // return fence;
   }
 
   back() {
-    this.router.navigate(['fence']);
+    this.router.navigate(['fences']);
   }
 
 }

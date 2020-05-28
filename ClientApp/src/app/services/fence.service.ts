@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IFence } from '../interfaces/ifence';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +22,6 @@ export class FenceService {
   }
 
   async getById(id: number) {
-    return this.http.get(this.baseUrl + 'fence/' + id).toPromise();
+    return await this.http.get(this.baseUrl + 'fence/' + id).toPromise();
   }
 }

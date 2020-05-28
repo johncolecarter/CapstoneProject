@@ -1,6 +1,21 @@
-<div>
-    <button (click)="back()" mat-raised-button color="warn">Back</button>
-</div>
-<div class="text-light">
-    Home Owner: {{fence.homeOwner}}
+<div class="card text-white bg-dark mb-3" style="max-width: 500px;">
+    <div style="margin-bottom: 5px;">
+        <button (click)="back()" mat-raised-button color="warn">Back</button>
+    </div>
+    <div class="card-header">{{fence.homeOwner}}</div>
+    <div class="card-body">
+        <div class="card-text">
+            <span style="color: rgb(150, 148, 148);">Address: </span> {{fence.address}}<br>
+            <span style="color: rgb(150, 148, 148);">Date: </span> {{fence.date | date:'longDate'}}<br>
+            <span style="color: rgb(150, 148, 148);">Builder: </span> {{fence.builder}}<br>
+            <span style="color: rgb(150, 148, 148);">Feet of Fence: </span> {{fence.feetOfFence}}<br>
+            <span style="color: rgb(150, 148, 148);">Height of Fence: </span> {{fence.heightOfFence}}<br>
+            <span style="color: rgb(150, 148, 148);">Type of Fence: </span> {{fence.typeOfFence}}<br>
+            <span style="color: rgb(150, 148, 148);">Number of Gates: </span> {{fence.gates}}<br>
+            <span style="color: rgb(150, 148, 148);">Curb: </span> {{fence.curb}}<br>
+            <span style="color: rgb(182, 180, 180);">Stain: </span> {{fence.stain}}<br>
+            <span style="color: rgb(150, 148, 148);">Brian or Chad: </span> {{fence.bOrC}}<br>
+            <span style="color: rgb(150, 148, 148);">Price: </span> {{fence.price | currency}}<br>
+        </div>
+    </div>
 </div>
