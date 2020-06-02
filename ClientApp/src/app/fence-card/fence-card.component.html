@@ -1,21 +1,30 @@
-<div class="card text-white bg-dark mb-3" style="max-width: 500px;">
+<div class="card text-white bg-dark mb-3" style="max-width: 700px;">
     <div style="margin-bottom: 5px;">
         <button (click)="back()" mat-raised-button color="warn">Back</button>
     </div>
     <div class="card-header">{{fence?.homeOwner}}</div>
     <div class="card-body">
         <div class="card-text">
-            <span class="descrip">Address: </span> <span class="data">{{fence?.address}}</span><br>
-            <span class="descrip">Date: </span> <span class="data">{{fence?.date | date:'longDate'}}</span><br>
-            <span class="descrip">Builder: </span> <span class="data">{{fence?.builder}}</span><br>
-            <span class="descrip">Feet of Fence: </span> <span class="data">{{fence?.feetOfFence}}</span><br>
-            <span class="descrip">Height of Fence: </span> <span class="data">{{fence?.heightOfFence}}</span><br>
-            <span class="descrip">Type of Fence: </span> <span class="data">{{fence?.typeOfFence}}</span><br>
-            <span class="descrip">Number of Gates: </span> <span class="data">{{fence?.gates}}</span><br>
-            <span class="descrip">Curb: </span> <span class="data">{{fence?.curb}}</span><br>
-            <span class="descrip">Stain: </span> <span class="data">{{fence?.stain}}</span><br>
-            <span class="descrip">Brian or Chad: </span> <span class="data">{{fence?.bOrC}}</span><br>
-            <span class="descrip">Price: </span> <span class="data">{{fence?.price | currency}}</span><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col"><span class="descrip">Address:</span> {{fence?.address}}</div>
+                    <div class="w-100"></div>
+                    <div class="col"><span class="descrip">Date:</span> {{fence?.date | date:'longDate'}}</div>
+                    <div class="col"> <span class="descrip">Builder:</span> {{fence?.builder}}</div>
+                    <div class="w-100"></div>
+                    <div class="col"><span class="descrip">Feet of Fence:</span> {{fence?.feetOfFence}}</div>
+                    <div class="col"><span class="descrip">Height of Fence:</span> {{fence?.heightOfFence}}</div>
+                    <div class="w-100"></div>
+                    <div class="col"><span class="descrip">Type of Fence:</span> {{fence?.typeOfFence}}</div>
+                    <div class="col"><span class="descrip">Gates:</span> {{fence?.gates}}</div>
+                    <div class="w-100"></div>
+                    <div class="col"><span class="descrip">Curb:</span> {{fence?.curb}}</div>
+                    <div class="col"><span class="descrip">Stain:</span> {{fence?.stain}}</div>
+                    <div class="w-100"></div>
+                    <div class="col"><span class="descrip">B or C:</span> {{fence?.bOrC}}</div>
+                    <div class="col"><span class="descrip">Price:</span> {{fence?.price | currency}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

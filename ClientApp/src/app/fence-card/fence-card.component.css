@@ -9,10 +9,17 @@
 }
 
 .descrip {
-    color: rgb(139, 137, 137);
-    border-bottom: 1px solid red;
+    color: rgb(153, 152, 152);
 }
 
 .data {
     border-bottom: 1px solid red;
+}
+
+.col {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
