@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/25f81dfa-b41e-4899-8b00-0e62b60a08a0/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/BandCFenceApp",
+    "appService.deploySubpath": "publish"
+}
