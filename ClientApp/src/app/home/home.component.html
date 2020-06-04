@@ -1,26 +1,24 @@
-<div class="container">
-  <div class="row justify-content-start">
-    <div class="col-12">
-      <div class="jokeBox">
-        <h1 class="text-light">
-          Want to hear a joke? <button type="button" (click)="getJoke()" mat-raised-button color="warn"> Click here
-          </button>
-        </h1>
-        <hr>
-        <p class="text-light">
-          {{joke?.joke}}
-        </p>
-      </div>
+<div class="row justify-content-start">
+  <div class="col-lg-5">
+    <div class="jokeBox">
+      <h1 class="text-light">
+        Want to hear a joke? <button type="button" (click)="getJoke()" mat-raised-button color="warn"> Click here
+        </button>
+      </h1>
+      <hr>
+      <p class="text-light">
+        {{joke?.joke}}
+      </p>
     </div>
   </div>
-  <div class="row justify-content-center text-light">
-    <div class="col-4">
-      Time
-    </div>
+</div>
+<div class="row justify-content-center text-light">
+  <div class="col-4">
+    Time
   </div>
-  <div class="row justify-content-end text-light">
-    <div class="col-4">
-      <app-calculator></app-calculator>
-    </div>
+</div>
+<div class="row justify-content-end text-light">
+  <div class="col-lg-4">
+    <app-calculator></app-calculator>
   </div>
 </div>
