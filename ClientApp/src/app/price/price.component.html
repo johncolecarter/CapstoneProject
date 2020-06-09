@@ -12,7 +12,7 @@
                     <input [(ngModel)]="price.feetOfFence" type="number" name="feetOfFence" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
-                    <label class="text-light">Heigt of Fence</label>
+                    <label class="text-light">Height of Fence</label>
                     <input [(ngModel)]="price.heightOfFence" type="number" name="heigtOfFence" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
@@ -27,11 +27,23 @@
                     <input [(ngModel)]="price.gates" type="number" name="gates" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
+                    <label class="text-light">Curb</label>
+                    <select [(ngModel)]="price.curb" type="text" name="curb" class="form-control">
+                        <option *ngFor="let type of yesNo" [ngValue]="type">{{type}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
                     <label class="text-light">Any Extra Costs</label>
                     <input [(ngModel)]="price.extra" type="number" name="extra" class="form-control">
-                </div><br>
-                <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()">Get
-                    Estimate</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="button" class="text-light" mat-raised-button color="warn" (click)="getPrice()"
+                        (click)="getMats()">Get
+                        Estimate
+                    </button>
+                </div>
+
             </form>
         </div>
         <div class="col">

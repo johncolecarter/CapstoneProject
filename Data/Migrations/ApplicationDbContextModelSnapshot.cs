@@ -315,8 +315,8 @@ namespace capstone.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("FeetOfFence")
-                        .HasColumnType("REAL");
+                    b.Property<int>("FeetOfFence")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Gates")
                         .HasColumnType("INTEGER");
@@ -327,8 +327,11 @@ namespace capstone.Data.Migrations
                     b.Property<string>("HomeOwner")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("REAL");
+                    b.Property<string>("Notes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("Stain")
                         .HasColumnType("INTEGER");
@@ -339,40 +342,6 @@ namespace capstone.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Fence");
-                });
-
-            modelBuilder.Entity("capstone.Models.Student", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Students");
-                });
-
-            modelBuilder.Entity("capstone.Models.Teacher", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Teachers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

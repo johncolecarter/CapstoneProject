@@ -3,5 +3,6 @@ export interface IPrice {
     heightOfFence: number;
     typeOfFence: string;
     gates: number;
+    curb: string;
     extra: number;
 }
