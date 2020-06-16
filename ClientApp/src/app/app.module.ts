@@ -20,9 +20,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CreateFenceComponent } from './create-fence/create-fence.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDialogModule } from '@angular/material/dialog';
 import { FenceCardComponent } from './fence-card/fence-card.component';
 import { PriceComponent } from './price/price.component';
 import { CalculatorComponent } from './calculator/calculator.component';
@@ -50,9 +48,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
     MatPaginatorModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatDatepickerModule,
     MatSelectModule,
-    MatDialogModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'fences/:id', component: FenceCardComponent, canActivate: [AuthorizeGuard] },
