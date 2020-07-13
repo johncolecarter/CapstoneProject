@@ -12,6 +12,8 @@ export class FenceCardComponent implements OnInit {
 
   readonly ID = 'id';
 
+  public deleting = false;
+
   public fence: any;
 
   // tslint:disable-next-line: max-line-length
@@ -38,6 +40,18 @@ export class FenceCardComponent implements OnInit {
   }
 
   back() {
+    this.router.navigate(['fences']);
+  }
+
+  isDeleting() {
+    this.deleting = !this.deleting;
+  }
+
+  async delete() {
+    const id = this.activatedRouter.snapshot.params[this.ID];
+
+    await this.fenceService.deleteFence(id);
+
     this.router.navigate(['fences']);
   }
 

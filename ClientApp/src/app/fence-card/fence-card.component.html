@@ -1,4 +1,4 @@
-<div class="card text-white bg-dark mb-3" style="max-width: 700px;">
+<div *ngIf="this.deleting === false" class="card text-white bg-dark mb-3" style="max-width: 700px;">
     <div style="margin-bottom: 5px;">
         <button (click)="back()" mat-raised-button color="warn">Back</button>
     </div>
@@ -26,5 +26,16 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div style="margin-top: 5px;">
+        <button (click)="isDeleting()" mat-raised-button color="warn">Delete</button>
+    </div>
+</div>
+
+<div *ngIf="this.deleting === true">
+    <div class="alert alert-dark" role="alert" style="margin-top: 50px;">
+        <h1>Are you sure you want to remove this fence?</h1>
+        <button (click)="isDeleting()" mat-raised-button color="warn" style="margin-right: 10px;">No</button>
+        <button (click)="delete()" mat-raised-button color="warn">Yes</button>
     </div>
 </div>

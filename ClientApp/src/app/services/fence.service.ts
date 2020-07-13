@@ -24,4 +24,8 @@ export class FenceService {
   async getById(id: number) {
     return await this.http.get(this.baseUrl + 'fence/' + id).toPromise();
   }
+
+  async deleteFence(id: number) {
+    return await this.http.delete(this.baseUrl + 'fence/' + id).toPromise();
+  }
 }
